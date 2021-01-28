@@ -1,10 +1,13 @@
 import React from "react";
+import styles from "./TestComp.module.css";
+import styles2 from "./TestComp2.module.css";
 
 class TestComp2 extends React.Component {
     render() {
+        console.log(styles);
         return (
-            <div className="paddingBig">
-                <h1>Hello World!</h1>
+            <div className={`${styles.backgroundColor} ${styles2.addPadding}`}>
+                <h1 className="">Hello World!</h1>
                 <img
                     src={require("../res/images/Capture.JPG")}
                     alt="Lithuanian Castle"

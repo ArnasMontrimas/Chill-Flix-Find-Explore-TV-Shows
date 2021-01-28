@@ -24,8 +24,14 @@ module.exports = merge(common, {
                     {
                         loader: "css-loader",
                         options: {
-                            modules: true,
-                            exportLocalsConvention: "camelCase",
+                            esModule: true,
+                            modules: {
+                                compileType: "module",
+                                mode: "local",
+                                auto: true,
+                                exportLocalsConvention: "camelCaseOnly",
+                                localIdentName: "[local]-[hash:base64:5]",
+                            },
                         },
                     },
                 ],
