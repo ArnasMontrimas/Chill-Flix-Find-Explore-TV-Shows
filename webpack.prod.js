@@ -21,7 +21,13 @@ module.exports = merge(common, {
                 test: /\.css$/i,
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
-                    { loader: "css-loader" },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            exportLocalsConvention: "camelCase",
+                        },
+                    },
                 ],
             },
         ],

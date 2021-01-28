@@ -13,7 +13,16 @@ module.exports = merge(common, {
         rules: [
             {
                 test: /\.css$/i,
-                use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+                use: [
+                    { loader: "style-loader" },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            exportLocalsConvention: "camelCase",
+                        },
+                    },
+                ],
             },
         ],
     },
