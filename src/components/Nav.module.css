@@ -1,0 +1,39 @@
+.flex-layout {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 1.5rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: x-large;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--main-color);
+}
+
+.nav ul {
+    flex: 0 1 70%;
+}
+
+.logo {
+    padding: 1.5rem 1.5rem 1.5rem 3rem;
+    flex: 0 1 30%;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.nav li {
+    flex: 0 1 10%;
+}
+
+.remove * {
+    list-style-type: none;
+    padding-inline-start: 0;
+    text-decoration: none;
+}
