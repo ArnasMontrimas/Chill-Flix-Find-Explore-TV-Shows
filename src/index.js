@@ -11,7 +11,8 @@ import Nav from "./components/Nav";
 import About from "./aboutPage/About";
 import Home from "./homePage/Home";
 import SearchMovie from "./searchMoviePage/SearchMovie";
-
+import TvShowDetails from "./components/TvShowDetails";
+import Error from "./components/Error";
 // Global Styles
 import "./globals.css";
 
@@ -21,10 +22,14 @@ const App = () => {
         <React.StrictMode>
             <Nav />
             <Router>
-                <Home path={`${__dirname}/`}></Home>
-                <SearchMovie path={`${__dirname}/search`}></SearchMovie>
-                <About path={`${__dirname}/about`}></About>
+                <Home path="/" />
+                <SearchMovie path="/search" />
+                <About path="/about" />
+                <TvShowDetails path="/tv-show/:id" />
+                <Error path="/error" />
             </Router>
+            <br />
+            <br />
         </React.StrictMode>
     );
 };

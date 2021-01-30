@@ -1,30 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "./Button";
 
-function TvShowCard({ name, genres, premiered, rating, image, summary }) {
+// Styles
+import styles from "./TvShowCard.module.css";
+
+function TvShowCard({ id, genres, premiered, rating, image }) {
     return (
-        <section>
+        <section className={styles.container}>
             <header>
-                <h4>{name}</h4>
-                <img src={image.medium} alt="Movie Poster" />
+                <img
+                    className={styles.border}
+                    src={image.medium || "No Image"}
+                    alt="Movie Poster"
+                />
             </header>
             <section>
-                <p>Genres: {genres}</p>
-                <p>Summary{summary}</p>
-                <p>Rating: {rating}</p>
-                <p>Premiered: {premiered}</p>
+                <p>Genres:&nbsp;{genres[0] || "N/A"}</p>
+                <p>Rating:&nbsp;{rating.average || "N/A"}</p>
+                <p>Premiered:&nbsp;{premiered || "N/A"}</p>
             </section>
+            <footer>
+                <Button id={id} />
+            </footer>
         </section>
     );
 }
 
 TvShowCard.propTypes = {
-    name: PropTypes.string.isRequired,
-    genres: PropTypes.array.isRequired,
-    premiered: PropTypes.string.isRequired,
-    rating: PropTypes.string.isRequired,
-    image: PropTypes.object.isRequired,
-    summary: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    genres: PropTypes.array,
+    premiered: PropTypes.string,
+    rating: PropTypes.object,
+    image: PropTypes.object,
 };
 
 export default TvShowCard;
