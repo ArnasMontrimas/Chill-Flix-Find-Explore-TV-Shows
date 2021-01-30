@@ -6,7 +6,7 @@ import useTvShowsAsync from "../hooks/useTvShowsAsync";
 import styles from "./Home.module.css";
 
 export default function Home() {
-    const tvShows = useTvShowsAsync();
+    const tvShows = useTvShowsAsync("");
 
     return (
         <main className={styles.container}>

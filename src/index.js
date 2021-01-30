@@ -25,7 +25,7 @@ const App = () => {
                 <Home path="/" />
                 <SearchMovie path="/search" />
                 <About path="/about" />
-                <TvShowDetails path="/tv-show/:id" />
+                <TvShowDetails path="/tv-show/:id/*" />
                 <Error path="/error" />
             </Router>
             <br />
