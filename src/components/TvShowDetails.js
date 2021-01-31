@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import useTvShowDetailsAsync from "../hooks/useTvShowDetailsAsync";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import Cast from "./Cast";
 import Crew from "./Crew";
 import Episodes from "./Episodes";
 import Seasons from "./Seasons";
+import Button from "./Button";
 
 // styles
 import styles1 from "../components/TvShowDetails.module.css"; // I know not the best naming convetion....
@@ -16,15 +17,33 @@ function TvShowDetails({ id }) {
     const crew = useTvShowDetailsAsync(id, "crew");
     const episodes = useTvShowDetailsAsync(id, "episodes");
     const seasons = useTvShowDetailsAsync(id, "seasons");
+
     return (
         <div>
-            <div className={styles1.container}>
-                <h1 className={styles1.mainText}>Pick what you want</h1>
-                <div className={styles1.linkContainer}>
-                    <Link to="cast">Cast Info</Link>
-                    <Link to="crew">Crew info</Link>
-                    <Link to="episodes">Episodes info</Link>
-                    <Link to="seasons">Seasons info</Link>
+            <div className={styles1.headingContainer}>
+                <div className={styles1.container}>
+                    <div className={styles1.linkContainer}>
+                        <Button
+                            to="cast"
+                            text="Cast Info"
+                            className={styles1.buttonFlex}
+                        />
+                        <Button
+                            to="crew"
+                            text="Crew info"
+                            className={styles1.buttonFlex}
+                        />
+                        <Button
+                            to="episodes"
+                            text="Episodes info"
+                            className={styles1.buttonFlex}
+                        />
+                        <Button
+                            to="seasons"
+                            text="Seasons info"
+                            className={styles1.buttonFlex}
+                        />
+                    </div>
                 </div>
             </div>
             <div className={styles.mainContainer}>

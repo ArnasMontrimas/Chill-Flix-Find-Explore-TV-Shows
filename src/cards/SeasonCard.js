@@ -34,7 +34,7 @@ const SeasonCard = ({
 
 SeasonCard.propTypes = {
     name: PropTypes.string,
-    episodeOrder: PropTypes.number,
+    episodeOrder: PropTypes.any,
     premiereDate: PropTypes.string,
     endDate: PropTypes.string,
     networkName: PropTypes.string,

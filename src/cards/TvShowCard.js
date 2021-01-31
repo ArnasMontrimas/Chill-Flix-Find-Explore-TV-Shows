@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "../components/Button";
+import TvShowDetailsButton from "../components/TvShowDetailsButton";
 
 // Styles
 import styles from "./Card.module.css";
@@ -21,7 +21,7 @@ function TvShowCard({ id, genres, premiered, rating, image }) {
                 <p>Premiered:&nbsp;{premiered || "N/A"}</p>
             </section>
             <footer>
-                <Button id={id} />
+                <TvShowDetailsButton id={id} />
             </footer>
         </section>
     );

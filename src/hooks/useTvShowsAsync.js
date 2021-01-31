@@ -46,13 +46,11 @@ const useTvShowsAsync = () => {
                 }
             }
             setTvShows(allData);
-
-            // if useEffect is called again before async call finshed cancel the previous async call
-            return () => {
-                controller.abort();
-            };
         };
         fetchTvShows().catch(() => navigate("/error"));
+
+        // if useEffect is called again before async call finshed cancel the previous async call
+        return () => controller.abort();
     }, []);
 
     return tvShows;
