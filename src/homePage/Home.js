@@ -1,5 +1,5 @@
 import React from "react";
-import TvShowCard from "../components/TvShowCard";
+import TvShowCard from "../cards/TvShowCard";
 import useTvShowsAsync from "../hooks/useTvShowsAsync";
 
 // Styles

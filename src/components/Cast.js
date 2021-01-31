@@ -1,18 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import CastCard from "../cards/CastCard";
 
-/* eslint-disable react/prop-types */
-function Cast({ cast }) {
+// styles
+import styles from "../cards/Card.module.css";
+
+function Cast(props) {
+    const [cast, setCast] = useState([]);
+
+    useEffect(() => {
+        setCast(props.cast);
+    }, [props.cast]);
+
     return (
-        <h1>
-            {/* eslint-disable react/prop-types */}
-            {cast.map(({ character, person }) => (
-                <p key={character.id + person.id / 10}>
-                    {character.name}&nbsp;|&nbsp;{person.name}
-                </p>
-            ))}
-            {/* No here we render CastCard in the map and so on for all the others! */}
-        </h1>
+        <section className={styles.cardContainer}>
+            {cast.length === 0 ? (
+                <h1>Loading...</h1>
+            ) : (
+                cast.map(({ character, person }) => (
+                    <CastCard
+                        key={character.id + person.id / 10}
+                        img={person?.image?.medium}
+                        personName={person?.name}
+                        characterName={character?.name}
+                        personCountry={person?.country?.name}
+                        personBday={person?.birthday}
+                        personDday={person?.deathday}
+                        personGender={person?.gender}
+                    />
+                ))
+            )}
+        </section>
     );
 }
+
+Cast.propTypes = {
+    cast: PropTypes.array,
+};
 
 export default Cast;

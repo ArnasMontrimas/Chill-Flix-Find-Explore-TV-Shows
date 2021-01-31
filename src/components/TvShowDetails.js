@@ -7,6 +7,9 @@ import Crew from "./Crew";
 import Episodes from "./Episodes";
 import Seasons from "./Seasons";
 
+// styles
+import styles from "../cards/Card.module.css";
+
 function TvShowDetails({ id }) {
     const cast = useTvShowDetailsAsync(id, "cast");
     const crew = useTvShowDetailsAsync(id, "crew");
@@ -22,12 +25,14 @@ function TvShowDetails({ id }) {
                 <Link to="episodes">Episodes info</Link>
                 <Link to="seasons">Seasons info</Link>
             </div>
-            <Router>
-                <Cast path="cast" cast={cast} />
-                <Crew path="crew" crew={crew} />
-                <Episodes path="episodes" episodes={episodes} />
-                <Seasons path="seasons" seasons={seasons} />
-            </Router>
+            <div className={styles.mainContainer}>
+                <Router>
+                    <Cast path="cast" cast={cast} />
+                    <Crew path="crew" crew={crew} />
+                    <Episodes path="episodes" episodes={episodes} />
+                    <Seasons path="seasons" seasons={seasons} />
+                </Router>
+            </div>
         </div>
     );
 }
