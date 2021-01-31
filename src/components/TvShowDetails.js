@@ -8,6 +8,7 @@ import Episodes from "./Episodes";
 import Seasons from "./Seasons";
 
 // styles
+import styles1 from "../components/TvShowDetails.module.css"; // I know not the best naming convetion....
 import styles from "../cards/Card.module.css";
 
 function TvShowDetails({ id }) {
@@ -15,15 +16,16 @@ function TvShowDetails({ id }) {
     const crew = useTvShowDetailsAsync(id, "crew");
     const episodes = useTvShowDetailsAsync(id, "episodes");
     const seasons = useTvShowDetailsAsync(id, "seasons");
-
     return (
         <div>
-            <h1>Pick what you want</h1>
-            <div>
-                <Link to="cast">Cast Info</Link>
-                <Link to="crew">Crew info</Link>
-                <Link to="episodes">Episodes info</Link>
-                <Link to="seasons">Seasons info</Link>
+            <div className={styles1.container}>
+                <h1 className={styles1.mainText}>Pick what you want</h1>
+                <div className={styles1.linkContainer}>
+                    <Link to="cast">Cast Info</Link>
+                    <Link to="crew">Crew info</Link>
+                    <Link to="episodes">Episodes info</Link>
+                    <Link to="seasons">Seasons info</Link>
+                </div>
             </div>
             <div className={styles.mainContainer}>
                 <Router>
