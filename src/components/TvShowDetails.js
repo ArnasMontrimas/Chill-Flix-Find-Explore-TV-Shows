@@ -25,22 +25,22 @@ function TvShowDetails({ id }) {
                     <div className={styles1.linkContainer}>
                         <Button
                             to="cast"
-                            text="Cast Info"
+                            text="Cast"
                             className={styles1.buttonFlex}
                         />
                         <Button
                             to="crew"
-                            text="Crew info"
+                            text="Crew"
                             className={styles1.buttonFlex}
                         />
                         <Button
                             to="episodes"
-                            text="Episodes info"
+                            text="Episodes"
                             className={styles1.buttonFlex}
                         />
                         <Button
                             to="seasons"
-                            text="Seasons info"
+                            text="Seasons"
                             className={styles1.buttonFlex}
                         />
                     </div>

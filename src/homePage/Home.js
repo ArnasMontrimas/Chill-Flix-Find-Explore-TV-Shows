@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import TvShowCard from "../cards/TvShowCard";
 import useTvShowsAsync from "../hooks/useTvShowsAsync";
 
 // Styles
 import styles from "./Home.module.css";
+import button from "../components/Button.module.css";
 
 export default function Home() {
-    const tvShows = useTvShowsAsync("");
+    const [reload, setReload] = useState(false);
+    const tvShows = useTvShowsAsync(reload);
 
     return (
         <main className={styles.container}>
+            <div className={styles.buttonContainer}>
+                <button
+                    onClick={() => {
+                        localStorage.setItem("tvShows", []);
+                        setReload(!reload);
+                    }}
+                    className={button.btnPrimary}
+                >
+                    Generate New Shows
+                </button>
+            </div>
             <div className={styles.cardContainer}>
                 {tvShows.length === 0 ? (
                     <h1>Loading...</h1>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AbortController from "abort-controller";
 import { navigate } from "@reach/router";
 
-const useTvShowsAsync = () => {
+const useTvShowsAsync = (reload) => {
     // tvShows array State Hook
     const [tvShows, setTvShows] = useState([]);
 
@@ -17,6 +17,8 @@ const useTvShowsAsync = () => {
             let i = 0; // increment number
             let maxRetries = 0; // limit number of retries if 404 encountered
 
+            //Setting it here to empty arr so when i generate new batch of tvShows the tvShow.length === 0 is true and loading is displayed
+            setTvShows([]);
             // When increment number greater than 10 stop
             while (i < 12) {
                 id = Math.floor(Math.random() * 1000 + 1);
@@ -46,12 +48,31 @@ const useTvShowsAsync = () => {
                 }
             }
             setTvShows(allData);
+            localStorage.setItem("tvShows", JSON.stringify(allData));
         };
-        fetchTvShows().catch(() => navigate("/error"));
 
-        // if useEffect is called again before async call finshed cancel the previous async call
-        return () => controller.abort();
-    }, []);
+        if (
+            localStorage.getItem("tvShows") === [] ||
+            localStorage.getItem("tvShows") === null ||
+            localStorage.getItem("tvShows") === false ||
+            localStorage.getItem("tvShows") === undefined ||
+            localStorage.getItem("tvShows") === ""
+        ) {
+            fetchTvShows().catch(() => navigate("/error"));
+            // if useEffect is called again before async call finshed cancel the previous async call
+            return () => controller.abort();
+        } else {
+            try {
+                setTvShows(JSON.parse(localStorage.getItem("tvShows")));
+            } catch (error) {
+                localStorage.setItem("tvShows", []);
+
+                fetchTvShows().catch(() => navigate("/error"));
+                // if useEffect is called again before async call finshed cancel the previous async call
+                return () => controller.abort();
+            }
+        }
+    }, [reload]);
 
     return tvShows;
 };
