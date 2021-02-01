@@ -6,15 +6,13 @@ const Error = () => {
     const [time, setTime] = useState(5);
 
     useEffect(() => {
-        let countdown = setInterval(() => {
+        let countdown = setTimeout(() => {
             if (time === 0) {
                 navigate("/");
             } else setTime(time - 1);
         }, 1000);
 
-        return () => {
-            clearInterval(countdown);
-        };
+        return () => clearTimeout(countdown);
     }, [time]);
 
     return (
