@@ -1,0 +1,5 @@
+.container {
+    text-align: center;
+    color: var(--main-color);
+    margin-top: 100px;
+}

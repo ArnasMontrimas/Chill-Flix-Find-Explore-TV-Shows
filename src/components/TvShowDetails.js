@@ -7,6 +7,7 @@ import Crew from "./Crew";
 import Episodes from "./Episodes";
 import Seasons from "./Seasons";
 import Button from "./Button";
+import Default from "./Default";
 
 // styles
 import styles1 from "../components/TvShowDetails.module.css"; // I know not the best naming convetion....
@@ -52,6 +53,10 @@ function TvShowDetails({ id }) {
                     <Crew path="crew" crew={crew} />
                     <Episodes path="episodes" episodes={episodes} />
                     <Seasons path="seasons" seasons={seasons} />
+                    <Default
+                        path="/"
+                        text="Pick what you want to learn about!"
+                    />
                 </Router>
             </div>
         </div>

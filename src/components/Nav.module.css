@@ -6,6 +6,15 @@
     padding: 1.5rem;
 }
 
+.anchor-color {
+    color: var(--text-color);
+    transition: color 0.2s ease-in-out;
+}
+
+.anchor-color:hover {
+    color: var(--main-color);
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
