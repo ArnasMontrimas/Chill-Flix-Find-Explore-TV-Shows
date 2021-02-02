@@ -6,7 +6,7 @@ import button from "../components/Button.module.css";
 function TvShowDetailsButton({ id }) {
     return (
         <button className={button.btnPrimary}>
-            <Link to={`tv-show/${id}`}>Learn More</Link>
+            <Link to={`/tv-show/${id}`}>Learn More</Link>
         </button>
     );
 }
