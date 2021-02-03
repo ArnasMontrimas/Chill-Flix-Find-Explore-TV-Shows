@@ -14,22 +14,20 @@ function Cast(props) {
 
     return (
         <section className={styles.cardContainer}>
-            {cast.length === 0 ? (
-                <h1>Loading...</h1>
-            ) : (
-                cast.map(({ character, person }) => (
-                    <CastCard
-                        key={character.id + person.id / 10}
-                        img={person?.image?.medium}
-                        personName={person?.name}
-                        characterName={character?.name}
-                        personCountry={person?.country?.name}
-                        personBday={person?.birthday}
-                        personDday={person?.deathday}
-                        personGender={person?.gender}
-                    />
-                ))
-            )}
+            {cast.length === 0
+                ? null
+                : cast.map(({ character, person }) => (
+                      <CastCard
+                          key={character.id + person.id / 10}
+                          img={person?.image?.medium}
+                          personName={person?.name}
+                          characterName={character?.name}
+                          personCountry={person?.country?.name}
+                          personBday={person?.birthday}
+                          personDday={person?.deathday}
+                          personGender={person?.gender}
+                      />
+                  ))}
         </section>
     );
 }

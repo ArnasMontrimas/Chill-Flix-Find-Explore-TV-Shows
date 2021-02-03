@@ -10,7 +10,7 @@ import "regenerator-runtime/runtime";
 import Nav from "./components/Nav";
 import About from "./aboutPage/About";
 import Home from "./homePage/Home";
-import SearchMovie from "./searchMoviePage/SearchMovie";
+import SearchTvShow from "./searchTvShowPage/SearchTvShow";
 import TvShowDetails from "./components/TvShowDetails";
 import Error from "./components/Error";
 
@@ -25,7 +25,7 @@ const App = () => {
             <main>
                 <Router>
                     <Home path="/" />
-                    <SearchMovie path="/search" />
+                    <SearchTvShow path="/search" />
                     <About path="/about" />
                     <TvShowDetails path="/tv-show/:id/*" />
                     <Error path="/error" />

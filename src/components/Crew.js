@@ -14,22 +14,20 @@ const Crew = (props) => {
 
     return (
         <section className={styles.cardContainer}>
-            {crew.length === 0 ? (
-                <h1>Loading...</h1>
-            ) : (
-                crew.map(({ type, person }, index) => (
-                    <CrewCard
-                        key={index}
-                        type={type || "N/A"}
-                        name={person?.name}
-                        country={person?.country?.name}
-                        birthday={person?.birthday}
-                        deathday={person?.deathday}
-                        gender={person?.gender}
-                        image={person?.image?.medium}
-                    />
-                ))
-            )}
+            {crew.length === 0
+                ? null
+                : crew.map(({ type, person }, index) => (
+                      <CrewCard
+                          key={index}
+                          type={type || "N/A"}
+                          name={person?.name}
+                          country={person?.country?.name}
+                          birthday={person?.birthday}
+                          deathday={person?.deathday}
+                          gender={person?.gender}
+                          image={person?.image?.medium}
+                      />
+                  ))}
         </section>
     );
 };

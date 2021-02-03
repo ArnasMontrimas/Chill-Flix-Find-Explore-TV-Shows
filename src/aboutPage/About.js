@@ -13,8 +13,9 @@ export default function About() {
                     crew information, episodes information and seasons
                     information on any of the shows, if he does not like any of
                     the tv shows presented he may generate another set of 12 tv
-                    shows. (Then talk about the search page (Its not done
-                    yet....))
+                    shows. The user may go to the search page where he can
+                    search for a TV Show by its name and get all the information
+                    as in the home page
                 </p>
             </div>
             <br />
@@ -34,7 +35,9 @@ export default function About() {
                     <li className={styles.listItemPadding}>
                         Clear localStorage & Generate New TV Shows
                     </li>
-                    <li className={styles.listItemPadding}>Blalala</li>
+                    <li className={styles.listItemPadding}>
+                        Search For TV Show by Name
+                    </li>
                 </ul>
             </div>
             <br />
@@ -42,9 +45,31 @@ export default function About() {
             <div>
                 <h2 className={styles.headingColor}>Learning Outcomes</h2>
                 <p className={styles.biggerText}>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Vitae tenetur nulla, voluptatum cum eum libero et non
-                    suscipit voluptatem incidunt!
+                    <b>React Basics:</b>&nbsp;Creating components, passing
+                    props, rendering to the DOM, component life-cycle
+                    <br />
+                    <br />
+                    <b>React Hooks:</b>&nbsp;useState, useEffect, useRef and
+                    custom hooks.
+                    <br />
+                    <br />
+                    <b>Portals:</b>&nbsp;created a portal for the modal.
+                    <br />
+                    <br />
+                    <b>Fetching Data:</b>&nbsp;Avoiding race conditions and
+                    memory leaks, displaying the data in the DOM.
+                    <br />
+                    <br />
+                    <b>Webpack:</b>&nbsp;Setting up webpack for development with
+                    dev server and for production with extracting css, minifying
+                    css, js, html.
+                    <br />
+                    <br />
+                    <b>Eslint:</b>&nbsp;Eslint set up to adhere to a good
+                    standard.
+                    <br />
+                    <br />
+                    <b>Prettier:</b>&nbsp;Prettier for a good code format.
                 </p>
             </div>
         </section>

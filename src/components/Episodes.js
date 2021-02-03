@@ -18,35 +18,33 @@ const Episodes = (props) => {
 
     return (
         <section className={styles.cardContainer}>
-            {episodes.length === 0 ? (
-                <h1>Loading...</h1>
-            ) : (
-                episodes.map(
-                    ({
-                        id,
-                        name,
-                        season,
-                        number,
-                        type,
-                        airdate,
-                        airtime,
-                        runtime,
-                        image,
-                    }) => (
-                        <EpisodeCard
-                            key={id}
-                            name={name || "N/A"}
-                            season={season || "N/A"}
-                            number={number || "N/A"}
-                            type={type || "N/A"}
-                            airdate={airdate || "N/A"}
-                            airtime={airtime || "N/A"}
-                            runtime={runtime || "N/A"}
-                            img={image?.medium || defaultImg}
-                        />
-                    )
-                )
-            )}
+            {episodes.length === 0
+                ? null
+                : episodes.map(
+                      ({
+                          id,
+                          name,
+                          season,
+                          number,
+                          type,
+                          airdate,
+                          airtime,
+                          runtime,
+                          image,
+                      }) => (
+                          <EpisodeCard
+                              key={id}
+                              name={name || "N/A"}
+                              season={season || "N/A"}
+                              number={number || "N/A"}
+                              type={type || "N/A"}
+                              airdate={airdate || "N/A"}
+                              airtime={airtime || "N/A"}
+                              runtime={runtime || "N/A"}
+                              img={image?.medium || defaultImg}
+                          />
+                      )
+                  )}
         </section>
     );
 };

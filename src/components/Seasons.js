@@ -17,36 +17,34 @@ const Seasons = (props) => {
 
     return (
         <section className={styles.cardContainer}>
-            {seasons.length === 0 ? (
-                <h1>Loading...</h1>
-            ) : (
-                seasons.map(
-                    (
-                        {
-                            id,
-                            name,
-                            episodeOrder,
-                            premiereDate,
-                            endDate,
-                            network,
-                            image,
-                        },
-                        index
-                    ) => (
-                        <SeasonCard
-                            key={id}
-                            name={name || "N/A"}
-                            episodeOrder={episodeOrder || "N/A"}
-                            premiereDate={premiereDate || "N/A"}
-                            endDate={endDate || "N/A"}
-                            networkName={network?.name || "N/A"}
-                            networkCountry={network?.country?.name || "N/A"}
-                            img={image?.medium || defaultImg}
-                            index={index}
-                        />
-                    )
-                )
-            )}
+            {seasons.length === 0
+                ? null
+                : seasons.map(
+                      (
+                          {
+                              id,
+                              name,
+                              episodeOrder,
+                              premiereDate,
+                              endDate,
+                              network,
+                              image,
+                          },
+                          index
+                      ) => (
+                          <SeasonCard
+                              key={id}
+                              name={name || "N/A"}
+                              episodeOrder={episodeOrder || "N/A"}
+                              premiereDate={premiereDate || "N/A"}
+                              endDate={endDate || "N/A"}
+                              networkName={network?.name || "N/A"}
+                              networkCountry={network?.country?.name || "N/A"}
+                              img={image?.medium || defaultImg}
+                              index={index}
+                          />
+                      )
+                  )}
         </section>
     );
 };
