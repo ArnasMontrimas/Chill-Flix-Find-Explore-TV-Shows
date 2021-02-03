@@ -42,3 +42,9 @@ as in the home page
     -   Eslint set up to adhere to a good standard.
 -   **Prettier:**
     -   Prettier for a good code format.
+
+## Website
+
+[Chill Flix Find & Explore TV Shows](https://react-tv-shows.netlify.app/)
+
+> Website hosted on netlify
