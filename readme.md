@@ -21,17 +21,24 @@ as in the home page
 
 ### Learning Outcomes
 
--   React Basics
--   -   Creating components, passing props, rendering to the DOM, component life-cycle
--   React Hooks:
--   -   useState, useEffect, useRef and custom hooks.
--   Portals:
--   -   created a portal for the modal.
--   Fetching Data:
--   -   Avoiding race conditions and memory leaks, displaying the data in the DOM.
--   Webpack:
--   -   Setting up webpack for development with dev server and for production with extracting css, minifying css, js, html.
--   Eslint:
--   -   Eslint set up to adhere to a good standard.
--   Prettier:
--   -   Prettier for a good code format.
+-   **React Basics:**
+    -   Creating components.
+    -   Passing props.
+    -   Rendering to the DOM.
+    -   Component life-cycle.
+-   **React Hooks:**
+    -   useState.
+    -   useEffect.
+    -   useRef.
+    -   Custom hooks.
+-   **Portals:**
+    -   Created a portal for the modal.
+-   **Fetching Data:**
+    -   Avoiding race conditions and memory leaks, displaying the data in the DOM.
+-   **Webpack:**
+    -   Setting up webpack for development with dev server.
+    -   Production with extracting css, minifying css, js, html.
+-   **Eslint:**
+    -   Eslint set up to adhere to a good standard.
+-   **Prettier:**
+    -   Prettier for a good code format.
