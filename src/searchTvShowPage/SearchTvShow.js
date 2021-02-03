@@ -22,7 +22,7 @@ export default function SearchMovie() {
 
             try {
                 const res = await fetch(
-                    `http://api.tvmaze.com/singlesearch/shows?q=${query}`,
+                    `https://api.tvmaze.com/singlesearch/shows?q=${query}`,
                     {
                         method: "GET",
                     }

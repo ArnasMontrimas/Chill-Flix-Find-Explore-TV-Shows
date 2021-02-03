@@ -4,3 +4,4 @@
 /public
 .env
 tasks.txt
+.netlify

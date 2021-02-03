@@ -12,7 +12,7 @@ module.exports = merge(common, {
     mode: "production",
     devtool: "source-map",
     output: {
-        filename: "js/[name].[contenthash].js",
+        filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "public"),
     },
     module: {
@@ -42,13 +42,6 @@ module.exports = merge(common, {
         runtimeChunk: "single",
         splitChunks: {
             chunks: "all",
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-                    name: "vendors/",
-                    chunks: "all",
-                },
-            },
         },
         minimize: true,
         minimizer: [
@@ -73,10 +66,10 @@ module.exports = merge(common, {
             loader: false,
         }),
         new MiniCssExtractPlugin({
-            filename: "css/[name].[contenthash].css",
+            filename: "[name].[contenthash].css",
         }),
         new SourceMapDevToolPlugin({
-            filename: "maps/[file].map",
+            filename: "[file].map",
         }),
     ],
 });

@@ -12,7 +12,7 @@ const useTvShowDetailsAsync = (id, option) => {
 
         let fetchTvShows = async () => {
             const res = await fetch(
-                `http://api.tvmaze.com/shows/${id}/${option}`,
+                `https://api.tvmaze.com/shows/${id}/${option}`,
                 {
                     method: "GET",
                     signal: signal,

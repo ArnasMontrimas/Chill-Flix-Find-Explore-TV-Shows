@@ -32,7 +32,7 @@ const useTvShowsAsync = (reload) => {
 
                 allId.push(id);
 
-                const res = await fetch(`http://api.tvmaze.com/shows/${id}`, {
+                const res = await fetch(`https://api.tvmaze.com/shows/${id}`, {
                     method: "GET",
                     signal: signal,
                 });

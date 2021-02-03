@@ -17,7 +17,6 @@ module.exports = {
                     {
                         loader: "file-loader",
                         options: {
-                            outputPath: "static/images",
                             name: "[name].[hash].[ext]",
                             esModule: false,
                         },
